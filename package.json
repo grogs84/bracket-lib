@@ -1,0 +1,13 @@
+{
+  "name": "bracket-lib",
+  "private": true,
+  "packageManager": "pnpm@9.0.0",
+  "workspaces": [
+    "packages/*"
+  ],
+  "scripts": {
+    "build": "npm run -ws build",
+    "test": "npm run -ws test",
+    "lint": "echo \"lint placeholder\""
+  }
+}
