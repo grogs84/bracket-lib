@@ -9,6 +9,7 @@ pnpm-debug.log*
 /dist
 coverage
 .vite
+.turbo
 
 # OS
 .DS_Store
@@ -20,3 +21,4 @@ Thumbs.db
 
 # Storybook static build
 packages/react/storybook-static
+*.tgz
