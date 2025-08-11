@@ -40,8 +40,11 @@ export function BracketSVG(props: BracketSVGProps) {
   const rightX = (x: number) => boxX(x) + boxWidth;
   const leftX = (x: number) => boxX(x);
 
+  const titleId = 'bracket-title';
+  
   return (
-    <svg width={w} height={h} viewBox={`0 0 ${w} ${h}`} role="img">
+    <svg width={w} height={h} viewBox={`0 0 ${w} ${h}`} role="img" aria-labelledby={titleId}>
+      <title id={titleId}>Tournament bracket</title>
       <g stroke={stroke} fill="none" strokeWidth={2}>
         {layout.edges.map((e) => {
           const from = nodeMap.get(e.from)!;
