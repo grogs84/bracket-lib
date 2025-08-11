@@ -46,3 +46,33 @@ jobs:
 
       - name: Build storybook
         run: npm --workspace @mgi/bracket-react run build-storybook
+
+  storybook-tests:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      - name: Install root deps
+        run: npm ci
+
+      - name: Install react package deps
+        run: npm --workspace @mgi/bracket-react install
+
+      - name: Install Playwright (chromium)
+        run: npx playwright install --with-deps chromium
+
+      - name: Start Storybook
+        run: npm --workspace @mgi/bracket-react run storybook &
+
+      - name: Wait for Storybook
+        run: npx wait-on http://127.0.0.1:6006
+
+      - name: Run Storybook tests
+        run: npm --workspace @mgi/bracket-react run test-storybook

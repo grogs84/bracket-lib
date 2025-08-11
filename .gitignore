@@ -17,3 +17,6 @@ Thumbs.db
 # Env
 .env
 .env.*
+
+# Storybook static build
+packages/react/storybook-static
