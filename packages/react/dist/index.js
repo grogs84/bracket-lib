@@ -22,7 +22,9 @@ function BracketSVG(props) {
   const midY = (y) => boxY(y) + boxHeight / 2;
   const rightX = (x) => boxX(x) + boxWidth;
   const leftX = (x) => boxX(x);
-  return /* @__PURE__ */ jsxs("svg", { width: w, height: h, viewBox: `0 0 ${w} ${h}`, role: "img", children: [
+  const titleId = "bracket-title";
+  return /* @__PURE__ */ jsxs("svg", { width: w, height: h, viewBox: `0 0 ${w} ${h}`, role: "img", "aria-labelledby": titleId, children: [
+    /* @__PURE__ */ jsx("title", { id: titleId, children: "Tournament bracket" }),
     /* @__PURE__ */ jsx("g", { stroke, fill: "none", strokeWidth: 2, children: layout.edges.map((e) => {
       const from = nodeMap.get(e.from);
       const to = nodeMap.get(e.to);
