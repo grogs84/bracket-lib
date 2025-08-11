@@ -1,3 +1,27 @@
+interface UserParticipant {
+    name: string;
+    seed: number | null;
+    school: string | null;
+}
+interface UserMatch {
+    id: string;
+    round: string;
+    participants: UserParticipant[];
+    winner: string | null;
+    score: string | null;
+    winner_next_match_id: string | null;
+    winner_prev_match_id: string | null;
+    loser_prev_match_id: string | null;
+}
+interface UserBracketInput {
+    matches: UserMatch[];
+}
+declare function toBracketInput(user: UserBracketInput, opts?: {
+    championshipOnly?: boolean;
+}): BracketInput;
+declare const USER_BRACKET_RAW: UserBracketInput;
+declare const USER_BRACKET: BracketInput;
+
 type MatchId = string;
 interface ParticipantRef {
     name: string;
@@ -45,4 +69,4 @@ interface BuildLayoutOptions {
  */
 declare function buildLayout(input: BracketInput, opts?: BuildLayoutOptions): Layout;
 
-export { type BracketInput, type BuildLayoutOptions, type Layout, type LayoutEdge, type LayoutNode, type Match, type MatchId, type ParticipantRef, buildLayout };
+export { type BracketInput, type BuildLayoutOptions, type Layout, type LayoutEdge, type LayoutNode, type Match, type MatchId, type ParticipantRef, USER_BRACKET, USER_BRACKET_RAW, buildLayout, toBracketInput };

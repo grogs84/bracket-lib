@@ -8,6 +8,8 @@
   "scripts": {
     "build": "npm run -ws build",
     "test": "npm run -ws test",
-    "lint": "echo \"lint placeholder\""
+    "lint": "echo \"lint placeholder\"",
+    "dev": "npm --prefix examples/react-vite run dev",
+    "preview": "npm --prefix examples/react-vite run preview"
   }
 }
