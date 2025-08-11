@@ -1,5 +1,5 @@
 {
-  "name": "examples-react-vite",
+  "name": "react-vite-example",
   "private": true,
   "type": "module",
   "version": "0.0.0",
@@ -11,8 +11,8 @@
   "dependencies": {
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
-    "@mgi/bracket-core": "file:../../packages/core",
-    "@mgi/bracket-react": "file:../../packages/react"
+    "@mgi/bracket-core": "^0.1.0",
+    "@mgi/bracket-react": "^0.1.0"
   },
   "devDependencies": {
     "typescript": "^5.5.4",

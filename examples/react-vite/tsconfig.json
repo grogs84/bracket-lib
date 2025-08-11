@@ -2,7 +2,12 @@
   "extends": "../../tsconfig.base.json",
   "compilerOptions": {
     "jsx": "react-jsx",
-    "moduleResolution": "Bundler"
+    "moduleResolution": "Bundler",
+    "baseUrl": ".",
+    "paths": {
+      "@mgi/bracket-react": ["../../packages/react/src"],
+      "@mgi/bracket-core": ["../../packages/core/src"]
+    }
   },
   "include": ["src"]
 }
