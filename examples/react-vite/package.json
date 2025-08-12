@@ -6,7 +6,8 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build",
-    "preview": "vite preview --port 5173"
+    "preview": "vite preview --port 5173",
+    "test": "echo \"No tests in example app\" && exit 0"
   },
   "dependencies": {
     "react": "^18.3.1",
