@@ -16,6 +16,7 @@
   "files": ["dist"],
   "scripts": {
     "build": "tsup src/index.ts --format esm,cjs --dts",
+    "watch": "tsup src/index.ts --format esm,cjs --dts --watch",
     "test": "vitest run"
   },
   "devDependencies": {

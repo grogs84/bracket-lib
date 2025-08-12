@@ -25,11 +25,12 @@
     }
   },
   "dependencies": {
-    "@mgi/bracket-core": "^0.1.0"
+    "@mgi/bracket-core": "file:../core"
   },
   "files": ["dist"],
   "scripts": {
     "build": "tsup src/index.ts --format esm,cjs --dts",
+    "watch": "tsup src/index.ts --format esm,cjs --dts --watch",
     "test": "vitest run",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build",

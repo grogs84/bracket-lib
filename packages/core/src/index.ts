@@ -168,3 +168,4 @@ export function buildLayout(
 
 export { USER_BRACKET, USER_BRACKET_RAW, toBracketInput } from './samples';
 export { windowLayout } from './windowLayout.js';
+export { partitionByWinnerTrees, type PartitionResult, type WinnerTree } from './partition.js';
