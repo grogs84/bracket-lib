@@ -7,13 +7,13 @@
     "examples/*"
   ],
   "scripts": {
-    "bootstrap": "npm install && npm run -w @mgi/bracket-react build || true",
+    "bootstrap": "npm ci && npm run -ws build",
     "build": "npm run -ws build",
     "test": "npm run -ws test",
     "lint": "echo \"lint placeholder\"",
     "dev": "npm --prefix examples/react-vite run dev",
     "dev:example": "npm run -w react-vite-example dev",
-    "dev:storybook": "npm run -w @mgi/bracket-react storybook",
+    "dev:storybook": "npm -w @mgi/bracket-core run watch & npm -w @mgi/bracket-react run storybook",
     "preview": "npm --prefix examples/react-vite run preview"
   }
 }

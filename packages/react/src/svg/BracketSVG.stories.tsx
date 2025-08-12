@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import React, { useMemo } from 'react';
 import { BracketSVG } from './BracketSVG';
-import { buildLayout, type BracketInput } from '@mgi/bracket-core';
+import { buildLayout, type BracketInput, windowLayout } from '@mgi/bracket-core';
 
 const meta: Meta<any> = {
   component: BracketSVG,
@@ -14,6 +14,9 @@ const meta: Meta<any> = {
     vGap: { control: { type: 'number' } },
     boxWidth: { control: { type: 'number' } },
     boxHeight: { control: { type: 'number' } },
+    // windowing controls (used by Windowed story)
+    startRound: { control: { type: 'number' } },
+    endRound: { control: { type: 'number' } },
   },
 };
 export default meta;
@@ -101,6 +104,34 @@ export const Playground: Story = {
     return (
       <div style={{ padding: 16 }}>
         <BracketSVG layout={layout} boxWidth={args.boxWidth} boxHeight={args.boxHeight} />
+      </div>
+    );
+  },
+};
+
+export const Windowed: Story = {
+  args: {
+    startRound: 1,
+    endRound: 4,
+    boxWidth: 120,
+    boxHeight: 40,
+    hGap: 160,
+    vGap: 40,
+  } as any,
+  render: (args: any) => {
+    const input = useMemo(() => makeBracket(32), []);
+    const full = useMemo(
+      () => buildLayout(input, { hGap: args.hGap, vGap: args.vGap }),
+      [input, args.hGap, args.vGap]
+    );
+    const sliced = useMemo(
+      () => windowLayout(full, Number(args.startRound ?? 0), Number(args.endRound ?? 5)),
+      [full, args.startRound, args.endRound]
+    );
+
+    return (
+      <div style={{ padding: 16 }}>
+        <BracketSVG layout={sliced} boxWidth={args.boxWidth} boxHeight={args.boxHeight} />
       </div>
     );
   },
