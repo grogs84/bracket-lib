@@ -1,5 +1,38 @@
 # Contributing to Bracket Lib
 
+## Getting Started
+
+This repository requires Node 20 and npm 10. Installs will fail fast if versions are wrong.
+
+### Prerequisites
+
+Ensure you have the correct Node.js and npm versions:
+- Node.js 20.x
+- npm 10.x
+
+If you use nvm, you can install and use the correct version:
+```bash
+nvm use
+```
+
+### Quick Start
+
+1. **Install dependencies and build packages**:
+   ```bash
+   npm ci
+   ```
+
+2. **Start the demo app** (Vite):
+   ```bash
+   npm run dev
+   ```
+
+3. **Start Storybook with live core development**:
+   ```bash
+   npm run dev:storybook
+   ```
+   This runs @mgi/bracket-core in watch mode and @mgi/bracket-react storybook concurrently.
+
 ## Local Development
 
 This repository uses npm workspaces for development and includes a live-reload setup for faster iteration when working on the React components.
@@ -41,8 +74,9 @@ The example app (`examples/react-vite`) uses Vite aliases to map `@mgi/bracket-r
 From the root directory:
 
 - `npm run bootstrap` — Install dependencies and build packages once
-- `npm run dev:example` — Start the Vite demo app
-- `npm run dev:storybook` — Start Storybook for the React package
+- `npm run dev` — Start the Vite demo app
+- `npm run dev:example` — Start the Vite demo app (alternative)
+- `npm run dev:storybook` — Start Storybook with core watch mode concurrently
 - `npm run build` — Build all packages
 - `npm run test` — Run tests in all packages
 - `npm run -ws test` — Alternative way to run all tests
